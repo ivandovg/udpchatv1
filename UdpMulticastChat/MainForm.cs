@@ -158,5 +158,19 @@ namespace UdpMulticastChat
             if (alive)
                 ExitChat();
         }
+
+        private void notifyIconChat_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.ShowInTaskbar = false;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                this.ShowInTaskbar = true;
+            }
+        }
     }
 }

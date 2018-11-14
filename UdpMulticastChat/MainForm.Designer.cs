@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.label1 = new System.Windows.Forms.Label();
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
@@ -39,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txbPort = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.notifyIconChat = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -131,6 +134,13 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Port";
             // 
+            // notifyIconChat
+            // 
+            this.notifyIconChat.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconChat.Icon")));
+            this.notifyIconChat.Text = "UdpMulticastChat";
+            this.notifyIconChat.Visible = true;
+            this.notifyIconChat.Click += new System.EventHandler(this.notifyIconChat_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,6 +158,7 @@
             this.Controls.Add(this.userNameTextBox);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -170,6 +181,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txbPort;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NotifyIcon notifyIconChat;
     }
 }
 
