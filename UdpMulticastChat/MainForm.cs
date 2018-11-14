@@ -16,10 +16,15 @@ namespace UdpMulticastChat
     {
         bool alive = false; // будет ли работать поток для приема
         UdpClient client;
-        const int LOCALPORT = 8001; // порт для приема сообщений
-        const int REMOTEPORT = 8001; // порт для отправки сообщений
+        //const int LOCALPORT = 8001; // порт для приема сообщений
+        //const int REMOTEPORT = 8001; // порт для отправки сообщений
+        //const int TTL = 20;
+        //const string HOST = "235.5.5.1"; // хост для групповой рассылки
+
+        int LOCALPORT; // порт для приема сообщений
+        int REMOTEPORT; // порт для отправки сообщений
         const int TTL = 20;
-        const string HOST = "235.5.5.1"; // хост для групповой рассылки
+        string HOST; // хост для групповой рассылки
         IPAddress groupAddress; // адрес для групповой рассылки
 
         string userName; // имя пользователя в чате
@@ -30,6 +35,10 @@ namespace UdpMulticastChat
             logoutButton.Enabled = false; // кнопка выхода
             sendButton.Enabled = false; // кнопка отправки
             chatTextBox.ReadOnly = true; // поле для сообщений 
+            HOST = "235.5.5.1";
+            REMOTEPORT = LOCALPORT = 8001;
+            txbIp.Text = HOST;
+            txbPort.Text = REMOTEPORT.ToString();
             groupAddress = IPAddress.Parse(HOST);
             loginButton.Click += loginButton_Click;
             sendButton.Click += sendButton_Click;
@@ -39,6 +48,18 @@ namespace UdpMulticastChat
         // обработчик нажатия кнопки loginButton
         private void loginButton_Click(object sender, EventArgs e)
         {
+            if (!IPAddress.TryParse(txbIp.Text, out groupAddress)) {
+                HOST = "235.5.5.1";
+                txbIp.Text = HOST;
+                groupAddress = IPAddress.Parse(HOST);
+            }
+            if (int.TryParse(txbPort.Text, out REMOTEPORT))
+                LOCALPORT = REMOTEPORT;
+            else
+            {
+                REMOTEPORT = LOCALPORT = 8001;
+                txbPort.Text = "8001";
+            }
             userName = userNameTextBox.Text;
             userNameTextBox.ReadOnly = true;
             try
