@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.userNameTextBox = new System.Windows.Forms.TextBox();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.logoutButton = new System.Windows.Forms.Button();
+            this.chatTextBox = new System.Windows.Forms.TextBox();
+            this.sendButton = new System.Windows.Forms.Button();
+            this.messageTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -46,66 +46,66 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
-            // textBox1
+            // userNameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(53, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(130, 20);
-            this.textBox1.TabIndex = 1;
+            this.userNameTextBox.Location = new System.Drawing.Point(53, 6);
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.Size = new System.Drawing.Size(130, 20);
+            this.userNameTextBox.TabIndex = 1;
             // 
-            // button1
+            // loginButton
             // 
-            this.button1.Location = new System.Drawing.Point(189, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
+            this.loginButton.Location = new System.Drawing.Point(189, 4);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.TabIndex = 2;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // logoutButton
             // 
-            this.button2.Location = new System.Drawing.Point(270, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Logout";
-            this.button2.UseVisualStyleBackColor = true;
+            this.logoutButton.Location = new System.Drawing.Point(270, 4);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(75, 23);
+            this.logoutButton.TabIndex = 3;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // chatTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 32);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(331, 203);
-            this.textBox2.TabIndex = 4;
+            this.chatTextBox.Location = new System.Drawing.Point(12, 32);
+            this.chatTextBox.Multiline = true;
+            this.chatTextBox.Name = "chatTextBox";
+            this.chatTextBox.Size = new System.Drawing.Size(331, 203);
+            this.chatTextBox.TabIndex = 4;
             // 
-            // button3
+            // sendButton
             // 
-            this.button3.Location = new System.Drawing.Point(268, 238);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Send";
-            this.button3.UseVisualStyleBackColor = true;
+            this.sendButton.Location = new System.Drawing.Point(268, 238);
+            this.sendButton.Name = "sendButton";
+            this.sendButton.Size = new System.Drawing.Size(75, 23);
+            this.sendButton.TabIndex = 6;
+            this.sendButton.Text = "Send";
+            this.sendButton.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // messageTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(15, 241);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(247, 20);
-            this.textBox3.TabIndex = 5;
+            this.messageTextBox.Location = new System.Drawing.Point(15, 241);
+            this.messageTextBox.Name = "messageTextBox";
+            this.messageTextBox.Size = new System.Drawing.Size(247, 20);
+            this.messageTextBox.TabIndex = 5;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 273);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.sendButton);
+            this.Controls.Add(this.messageTextBox);
+            this.Controls.Add(this.chatTextBox);
+            this.Controls.Add(this.logoutButton);
+            this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.userNameTextBox);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -120,12 +120,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox userNameTextBox;
+        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.Button logoutButton;
+        private System.Windows.Forms.TextBox chatTextBox;
+        private System.Windows.Forms.Button sendButton;
+        private System.Windows.Forms.TextBox messageTextBox;
     }
 }
 
